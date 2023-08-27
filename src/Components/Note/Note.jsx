@@ -1,9 +1,11 @@
 import React from 'react'
 import "./Note.css"
 
-function Note() {
+function Note({ id, value }) {
   return (
-    <div>Note</div>
+    <div>
+      <h1>{id} | {value}</h1>
+    </div>
   )
 }
 

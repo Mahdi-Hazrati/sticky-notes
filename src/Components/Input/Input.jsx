@@ -1,9 +1,16 @@
 import "./Input.css"
 import React from 'react'
 
-function Input() {
+function Input({ onChange, value, onSubmit }) {
   return (
-    <div>Input</div>
+    <div>
+      <input
+        type="text"
+        onChange={onChange}
+        value={value}
+      />
+      <button onClick={() => onSubmit(value)}>add</button>
+    </div>
   )
 }
 

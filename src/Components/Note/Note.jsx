@@ -4,7 +4,7 @@ import "./Note.css"
 function Note({ id, value }) {
   return (
     <div>
-      <h1>{id} | {value}</h1>
+      <h1>{id} - {value}</h1>
     </div>
   )
 }

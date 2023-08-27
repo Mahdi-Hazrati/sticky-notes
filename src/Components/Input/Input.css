@@ -1,0 +1,47 @@
+.note-input-container{
+    background-color: white;
+    width: 400px;
+    height: 40px;
+    border-radius: 10px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-top: 10px;
+    box-shadow: rgba(0, 0, 0, 0.02) 0px 1px 3px 0px, rgba(27, 31, 35, 0.15) 0px 0px 0px 1px;
+    /* box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px; */
+    /* box-shadow: rgba(0, 0, 0, 0.1) 0px 0px 5px 0px, rgba(0, 0, 0, 0.1) 0px 0px 1px 0px; */
+}
+
+.note-input-container > input{
+    width: 80%;
+    height: 40px;
+    border: none;
+    outline: none;
+    padding: 0px 10px;
+    font-size: 18px;
+    font-family: inherit;
+    background-color: transparent;
+}
+.note-input-container > input::placeholder{
+    font-family: inherit;
+}
+/* submit button */
+.note-input-container > button{
+    background-color: transparent;
+    outline: none;
+    border: none;
+    height: 40px;
+    width: 10%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-size: 18px;
+}
+.note-input-container > button:hover{
+    cursor: pointer;
+    filter: brightness(95%);
+    
+}
+.note-input-container > button:hover .icon{
+    color: #4CAF50;
+}

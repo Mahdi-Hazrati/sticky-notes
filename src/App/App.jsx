@@ -34,9 +34,8 @@ function App() {
     setNotes([...notes, newNote])
   }
   return (
-    <div className="app col-sm-6 col-md-4">
+    <div className="app container">
 
-      <h1>Sticky Notes web app</h1>
       {/* input */}
       <Input
         onChange={handleInputValueChange.bind(this)}

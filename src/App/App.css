@@ -1,0 +1,13 @@
+*{
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+}
+@font-face {
+    font-family: main-font;
+    src: url("../Assets/Fonts/IndieFlower-Regular.ttf");
+}
+body{
+    font-family: "main-font";
+    font-size: 16px;
+}

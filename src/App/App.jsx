@@ -6,8 +6,9 @@ import './App.css';
 
 function App() {
   return (
-    <div className="app">
-      Sticky Notes web app
+    <div className="app col-sm-6 col-md-4">
+      
+      <h1>Sticky Notes web app</h1>
       <Input />
       <Note />
     </div>

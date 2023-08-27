@@ -1,0 +1,45 @@
+.note {
+    width: 200px;
+    height: 180px;
+    background-color: #fff;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+    border-radius: 10px;
+    padding: 30px 20px;
+    font-size: 16px;
+    position: relative;
+    box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
+    
+    
+}
+.note::before {
+    content: "";
+    opacity: 0.5;
+    z-index: -1;
+    transform: translateY(10px);
+    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3)
+}
+.note > p{
+    color: white;
+}
+.note > .icon{
+    position: absolute;
+    right: 0;
+    top: 0;
+    color: crimson;
+    cursor: pointer;
+    width: 20px;
+    height: 20px;
+    margin: 5px;
+    transition: 0.2s;
+    opacity: 0.4;
+    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+
+
+
+
+
+}
+.note > .icon:hover{
+    opacity: 1;
+
+}

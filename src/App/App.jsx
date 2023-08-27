@@ -43,10 +43,13 @@ function App() {
         onSubmit={submitNewNote}
       />
       {/* note list */}
-      {notes.map((note) => (
-        <Note key={note.id} id={note.id} value={note.value} />
+      <div className="notes-container">
+        {notes.map((note) => (
+          <Note key={note.id} id={note.id} value={note.value} />
 
-      ))}
+        ))}
+      </div>
+
     </div>
   );
 }

@@ -46,9 +46,21 @@ function App() {
       setInputValue("")
     }
   }
+  function removeNote(noteID) {
+    let userConfirmResult = window.confirm("Do You Want to Remove This Note? \t" + noteID)
+    if (userConfirmResult) {
+      let filteredNotes = notes.filter((note) => {
+        return note.id !== noteID
+      })
+
+      setNotes(filteredNotes)
+    }else{
+      console.log("user cancel note remove proccess! \t", noteID)
+    }
+  }
 
   return (
-    <div className="app container">
+    <div className="app container-fluid">
 
       {/* input */}
       <Input
@@ -59,8 +71,14 @@ function App() {
       {/* note list */}
       <div className="notes-container">
         {notes.map((note) => (
-          <Note key={note.id} id={note.id} value={note.value} color={note.color} backgroundColor={note.backgroundColor} />
-
+          <Note
+            key={note.id}
+            id={note.id}
+            value={note.value}
+            color={note.color}
+            backgroundColor={note.backgroundColor}
+            handleRemove={removeNote}
+          />
         ))}
       </div>
     </div>

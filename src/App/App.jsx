@@ -4,35 +4,49 @@ import Input from "../Components/Input/Input"
 import Note from "../Components/Note/Note"
 import "shiftgrid"
 import './App.css';
+import color from "../Utils/color-palette"
 
 function App() {
   const [notes, setNotes] = useState([
-    { id: 1, value: "Remember to buy groceries" },
-    { id: 2, value: "Call mom to check on her" },
-    { id: 3, value: "Finish report for work" },
-    { id: 4, value: "Prepare for upcoming meeting" },
-    { id: 5, value: "Pay bills by end of the week" },
-    { id: 6, value: "Schedule dentist appointment" },
-    { id: 7, value: "Start new book for leisure reading" },
-    { id: 8, value: "Plan weekend activities" },
-    { id: 9, value: "Complete workout session" },
-    { id: 10, value: "Clean and organize desk space" },
+    { id: 1, value: "Remember to buy groceries", backgroundColor: "#3F51B5", color: "white" },
+    { id: 2, value: "Call mom to check on her", backgroundColor: "#3F51B5", color: "white" },
+    { id: 3, value: "Finish report for work", backgroundColor: "#3F51B5", color: "white" },
+    { id: 4, value: "Prepare for upcoming meeting", backgroundColor: "#3F51B5", color: "white" },
+    { id: 5, value: "Pay bills by end of the week", backgroundColor: "#3F51B5", color: "white" },
+    { id: 6, value: "Schedule dentist appointment", backgroundColor: "#3F51B5", color: "white" },
+    { id: 7, value: "Start new book for leisure reading", backgroundColor: "#3F51B5", color: "white" },
+    { id: 8, value: "Plan weekend activities", backgroundColor: "#3F51B5", color: "white" },
+    { id: 9, value: "Complete workout session", backgroundColor: "#3F51B5", color: "white" },
+    { id: 10, value: "Clean and organize desk space", backgroundColor: "#3F51B5", color: "white" },
   ])
   const [inputValue, setInputValue] = useState("")
 
   function handleInputValueChange(event) {
     let mainInputValue = event.target.value
-    console.log("value changed")
     setInputValue(mainInputValue)
+  }
+  const RandomColor = () => {
+    let randomInt = Math.floor(Math.random() * color.length)
+    return color[randomInt]
   }
   function submitNewNote(value) {
     console.log("new note submit")
-    let newNote = {
-      id: notes.length + 1,
-      value: value
+    if (value && typeof value === "string") {
+      // create new todo object
+      let bgColor = RandomColor()
+      let newNote = {
+        id: notes.length + 1,
+        value: value,
+        backgroundColor: bgColor,
+        color: "white"
+      }
+      // set new note on state
+      setNotes([...notes, newNote])
+      // make input value empty
+      setInputValue("")
     }
-    setNotes([...notes, newNote])
   }
+
   return (
     <div className="app container">
 
@@ -45,11 +59,10 @@ function App() {
       {/* note list */}
       <div className="notes-container">
         {notes.map((note) => (
-          <Note key={note.id} id={note.id} value={note.value} />
+          <Note key={note.id} id={note.id} value={note.value} color={note.color} backgroundColor={note.backgroundColor} />
 
         ))}
       </div>
-
     </div>
   );
 }

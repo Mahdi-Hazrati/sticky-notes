@@ -1,16 +1,11 @@
 import React from 'react'
-// import { AiFillDelete } from "react-icons/ai"
-import color from "../../Utils/color-palette"
+import { TiDelete } from "react-icons/ti"
 import "./Note.css"
 
-function Note({ id, value }) {
-  const RandomColor = () => {
-    let randomInt = Math.floor(Math.random() * color.length)
-    return color[randomInt]
-  }
+function Note({ id, value, color, backgroundColor }) {
   return (
-    <div className='note' style={{backgroundColor: RandomColor()}}>
-      {/* <AiFillDelete className='icon' /> */}
+    <div className='note' style={{ backgroundColor: backgroundColor, color: color }}>
+      <TiDelete className='icon' style={{color:color}} />
       <p>{value}</p>
     </div>
   )

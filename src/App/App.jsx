@@ -1,6 +1,7 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
 import "shiftgrid"
+import Header from "../Components/Header/Header"
 import Input from "../Components/Input/Input"
 import Note from "../Components/Note/Note"
 import color from "../Utils/color-palette"
@@ -48,11 +49,11 @@ function App() {
     let mainInputValue = event.target.value
     setInputValue(mainInputValue)
   }
-  function RandomColor(){
+  function RandomColor() {
     let randomInt = Math.floor(Math.random() * color.length)
     return color[randomInt]
   }
-  
+
   function submitNewNote(value) {
     if (value && typeof value === "string") {
       // create new todo object
@@ -88,14 +89,18 @@ function App() {
   }
 
   return (
-    <div className="app container-fluid">
-
+    <div className="app container">
+      <div className="header">
+        <Header />
+      </div>
       {/* input */}
-      <Input
-        onChange={handleInputValueChange.bind(this)}
-        value={inputValue}
-        onSubmit={submitNewNote}
-      />
+      <div className="input-container">
+        <Input
+          onChange={handleInputValueChange.bind(this)}
+          value={inputValue}
+          onSubmit={submitNewNote}
+        />
+      </div>
       {/* note list */}
       <div className="notes-container">
         {notes.map((note) => (

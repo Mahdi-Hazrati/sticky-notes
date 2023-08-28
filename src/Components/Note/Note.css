@@ -2,21 +2,13 @@
     width: 200px;
     height: 200px;
     background-color: #fff;
-    box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
-    border-radius: 10px;
+    border-radius: 0px;
     padding: 30px 15px;
     position: relative;
     box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
     overflow: hidden;
     
     
-}
-.note::before {
-    content: "";
-    opacity: 0.5;
-    z-index: -1;
-    transform: translateY(10px);
-    box-shadow: 0px 5px 10px rgba(0, 0, 0, 0.3)
 }
 .note > p{
     color: unset;

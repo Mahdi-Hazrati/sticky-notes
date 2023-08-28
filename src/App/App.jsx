@@ -1,11 +1,11 @@
 import React from 'react';
 import { useState, useEffect } from 'react';
-import "shiftgrid"
 import Header from "../Components/Header/Header"
 import Input from "../Components/Input/Input"
 import Note from "../Components/Note/Note"
 import color from "../Utils/color-palette"
 import getContrastColor from '../Utils/getContrastColor';
+import "shiftgrid"
 import './App.css';
 
 function App() {
@@ -84,36 +84,47 @@ function App() {
       // update local storage
       setToLocalStorage(localStorageKey, filteredNotes)
     } else {
-      // console.log("user cancel note remove proccess! \t", noteID)
+      console.log("user cancel note remove proccess! \t", noteID)
     }
   }
 
   return (
     <div className="app container">
-      <div className="header">
-        <Header />
-      </div>
-      {/* input */}
-      <div className="input-container">
-        <Input
-          onChange={handleInputValueChange.bind(this)}
-          value={inputValue}
-          onSubmit={submitNewNote}
-        />
-      </div>
-      {/* note list */}
-      <div className="notes-container">
-        {notes.map((note) => (
-          <Note
-            key={note.id}
-            id={note.id}
-            value={note.value}
-            color={note.color}
-            backgroundColor={note.backgroundColor}
-            handleRemove={removeNote}
+      <div className="row">
+        <div className="col">
+          <Header
+            innerText={"Sticky Notes - Web App"}
+            className={""}
           />
-        ))}
+        </div>
       </div>
+      <div className="row">
+        <div className="col">
+          <Input
+            className={""}
+            onChange={handleInputValueChange.bind(this)}
+            value={inputValue}
+            placeholder={"enter your sticky note"}
+            onSubmit={submitNewNote}
+          />
+        </div>
+      </div>
+      <div className="container">
+        <div className="row">
+          {notes.map((note) => (
+            <Note
+              className={"col g-10"}
+              key={note.id}
+              id={note.id}
+              value={note.value}
+              color={note.color}
+              backgroundColor={note.backgroundColor}
+              handleRemove={removeNote}
+            />
+          ))}
+        </div>
+      </div>
+
     </div>
   );
 }

@@ -2,11 +2,11 @@ import React from 'react'
 import { BsSticky } from "react-icons/bs"
 import "./Header.css"
 
-export default function Header() {
+export default function Header({innerText, className}) {
   return (
-    <div className='header'>
+    <div className={`header ${className}`}>
       <BsSticky className="icon" />
-      <h1>Sticky Note Web App</h1>
+      <h1>{innerText}</h1>
     </div>
   )
 }

@@ -8,16 +8,16 @@ import color from "../Utils/color-palette"
 
 function App() {
   const [notes, setNotes] = useState([
-    { id: 1, value: "Remember to buy groceries", backgroundColor: "#3F51B5", color: "white" },
-    { id: 2, value: "Call mom to check on her", backgroundColor: "#3F51B5", color: "white" },
-    { id: 3, value: "Finish report for work", backgroundColor: "#3F51B5", color: "white" },
-    { id: 4, value: "Prepare for upcoming meeting", backgroundColor: "#3F51B5", color: "white" },
-    { id: 5, value: "Pay bills by end of the week", backgroundColor: "#3F51B5", color: "white" },
-    { id: 6, value: "Schedule dentist appointment", backgroundColor: "#3F51B5", color: "white" },
-    { id: 7, value: "Start new book for leisure reading", backgroundColor: "#3F51B5", color: "white" },
-    { id: 8, value: "Plan weekend activities", backgroundColor: "#3F51B5", color: "white" },
-    { id: 9, value: "Complete workout session", backgroundColor: "#3F51B5", color: "white" },
-    { id: 10, value: "Clean and organize desk space", backgroundColor: "#3F51B5", color: "white" },
+    // { id: 1, value: "Remember to buy groceries", backgroundColor: "#3F51B5", color: "white" },
+    // { id: 2, value: "Call mom to check on her", backgroundColor: "#3F51B5", color: "white" },
+    // { id: 3, value: "Finish report for work", backgroundColor: "#3F51B5", color: "white" },
+    // { id: 4, value: "Prepare for upcoming meeting", backgroundColor: "#3F51B5", color: "white" },
+    // { id: 5, value: "Pay bills by end of the week", backgroundColor: "#3F51B5", color: "white" },
+    // { id: 6, value: "Schedule dentist appointment", backgroundColor: "#3F51B5", color: "white" },
+    // { id: 7, value: "Start new book for leisure reading", backgroundColor: "#3F51B5", color: "white" },
+    // { id: 8, value: "Plan weekend activities", backgroundColor: "#3F51B5", color: "white" },
+    // { id: 9, value: "Complete workout session", backgroundColor: "#3F51B5", color: "white" },
+    // { id: 10, value: "Clean and organize desk space", backgroundColor: "#3F51B5", color: "white" },
   ])
   const [inputValue, setInputValue] = useState("")
 

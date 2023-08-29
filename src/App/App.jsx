@@ -92,40 +92,34 @@ function App() {
     }
   }
   return (
-    <div className="app container">
-      <div className="row">
-        <div className="col">
-          <Header
-            innerText={"Sticky Notes - Web App"}
-            className={""}
-          />
-        </div>
+    <div className="app">
+      <div className="header-container">
+        <Header
+          className={"header"}
+          innerText={"Sticky Notes - Web App"}
+        />
       </div>
-      <div className="row">
-        <div className="col">
-          <Input
-            className={""}
-            onChange={handleInputValueChange.bind(this)}
-            value={inputValue}
-            placeholder={"enter your sticky note"}
-            onSubmit={submitNewNote}
-          />
-        </div>
+      <div className="main-input-container">
+        <Input
+          className={"input"}
+          onChange={handleInputValueChange.bind(this)}
+          value={inputValue}
+          placeholder={"enter your sticky note"}
+          onSubmit={submitNewNote}
+        />
       </div>
-      <div className="container">
-        <div className="row">
-          {notes.map((note) => (
-            <Note
-              className={"col"}
-              key={note.id}
-              id={note.id}
-              value={note.value}
-              color={note.color}
-              backgroundColor={note.backgroundColor}
-              handleRemove={removeNote}
-            />
-          ))}
-        </div>
+      <div className="notes-container">
+        {notes.map((note) => (
+          <Note
+            className={"note"}
+            key={note.id}
+            id={note.id}
+            value={note.value}
+            color={note.color}
+            backgroundColor={note.backgroundColor}
+            handleRemove={removeNote}
+          />
+        ))}
       </div>
 
     </div>

@@ -2,7 +2,7 @@
     width: 200px;
     height: 200px;
     background-color: #fff;
-    border-radius: 0px;
+    border-radius: 10px;
     padding: 30px 15px;
     position: relative;
     box-shadow: 0px 3px 5px rgba(0, 0, 0, 0.2);
@@ -16,6 +16,7 @@
     height: max-content;
     font-size: 18px;
     margin-top: 10px;
+    /* user-select: none; */
 
 }
 .note > .icon{
@@ -40,7 +41,6 @@
     left: 0;
     top: 0;
     color: unset;
-    cursor: pointer;
     width: 20px;
     height: 20px;
     margin: 10px;
@@ -48,8 +48,9 @@
     opacity: 0.8;
     font-family: monospace;
     font-size: 16px;
-    /* make display block to show */
-    display: none;
+    /* display: none; */
+    user-select: none;
+
 
 
 }

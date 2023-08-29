@@ -1,24 +1,35 @@
-*{
+* {
     padding: 0;
     margin: 0;
     box-sizing: border-box;
 }
 @font-face {
-    font-family: main-font;
+    font-family: IndieFlower;
     src: url("../Assets/Fonts/IndieFlower-Regular.ttf");
 }
-body{
-    font-family: "main-font";
+body {
+    font-family: IndieFlower;
     font-size: 16px;
 }
 
-/* --------------- */
+.app{
+    display: flex;
+    gap: 20px;
+    flex-direction: column;
+    align-items: center;
+}
+.app > .header-container, .main-input-container{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 10px 20px;
+}
 .app > .notes-container{
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    align-items: center;
+    flex-wrap: wrap-reverse;
+    justify-content:center;
+    align-items: flex-start;
     gap: 20px;
-    margin: 50px 0px;
+    padding: 25px 20px;
 }

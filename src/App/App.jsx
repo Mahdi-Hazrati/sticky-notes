@@ -3,6 +3,7 @@ import { useState, useEffect } from 'react';
 import Header from "../Components/Header/Header"
 import Input from "../Components/Input/Input"
 import Note from "../Components/Note/Note"
+import Footer from '../Components/Footer/Footer';
 import color from "../Utils/color-palette"
 import getContrastColor from '../Utils/getContrastColor';
 import "shiftgrid"
@@ -10,6 +11,17 @@ import './App.css';
 
 function App() {
   // app state inital
+  const [appDetails, setAppDetails] = useState({
+    app_title: "My Sticky Notes",
+    app_input_placeholder: "type new note here",
+    our_slogan: "No limits, only possibilities",
+    app_release_year: 2023,
+    author_username: "Mahdi Hazrati",
+    author_website_url: "https://github.com/Mahdi-Hazrati",
+    footer_github_text: "Have a bug ? fix an",
+    footer_github_url: "https://github.com/Mahdi-Hazrati/sticky-notes",
+
+  })
   const [notes, setNotes] = useState([])
   const [inputValue, setInputValue] = useState("")
   const [localStorageKey, setLocalStorageKey] = useState("notes")
@@ -96,7 +108,7 @@ function App() {
       <div className="header-container">
         <Header
           className={"header"}
-          innerText={"Sticky Notes - Web App"}
+          innerText={appDetails.app_title}
         />
       </div>
       <div className="main-input-container">
@@ -104,7 +116,7 @@ function App() {
           className={"input"}
           onChange={handleInputValueChange.bind(this)}
           value={inputValue}
-          placeholder={"enter your sticky note"}
+          placeholder={appDetails.app_input_placeholder}
           onSubmit={submitNewNote}
         />
       </div>
@@ -120,6 +132,16 @@ function App() {
             handleRemove={removeNote}
           />
         ))}
+      </div>
+      <div className="footer-container">
+        <Footer
+          slogan={appDetails.our_slogan}
+          year={appDetails.app_release_year}
+          username={appDetails.author_username}
+          userurl={appDetails.author_website_url}
+          github_text={appDetails.footer_github_text}
+          github_url={appDetails.footer_github_url}
+        />
       </div>
 
     </div>

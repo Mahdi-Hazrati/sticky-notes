@@ -18,7 +18,7 @@ body {
     flex-direction: column;
     align-items: center;
 }
-.app > .header-container, .main-input-container{
+.app > .header-container, .main-input-container, .footer-container{
     display: flex;
     flex-direction: column;
     align-items: center;
